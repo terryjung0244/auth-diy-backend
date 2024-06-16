@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./", // Set starting path
+    "module": "commonJS",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./build",
+    "incremental": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true
+  }
+}
