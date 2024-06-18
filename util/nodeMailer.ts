@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import autoOTPSchema from "../schema/autoOTPSchema";
+import autoOTPSchema from "../schema/authOTPSchema";
 import bcrypt from "bcryptjs";
 
 export const generateOTPandEmail = async ({
@@ -56,4 +56,16 @@ export const generateEmail = async (
     console.log(err);
     console.log("Failed to send email");
   }
+};
+
+export const signupAndSendEmail = async ({ email, firstName, lastName }) => {
+  const html = `
+    <p>
+      <h3>Welcome, ${firstName} ${lastName}${
+    firstName && lastName ? "." : ""
+  }</h3>
+      <div>Thank you for signing up!</div>
+    </p>`;
+
+  await generateEmail(email, "Thank your for signing up", html);
 };
